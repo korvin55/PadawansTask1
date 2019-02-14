@@ -6,8 +6,17 @@ namespace PadawansTask1
     {
         public static int GetYears(int initialPopulation, double percent, int visitors, int currentPopulation)
         {
-            // put your code here
-            throw new NotImplementedException();
+            int populationNow = initialPopulation;
+            int year = 0;
+            while (populationNow < currentPopulation)
+            {
+                int growthPopulation = (int)(initialPopulation * percent / 100 + visitors);
+                populationNow += growthPopulation;
+                initialPopulation = populationNow;
+                year += 1;
+                
+            }
+            return year;
         }
     }
 }
